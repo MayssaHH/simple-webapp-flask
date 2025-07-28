@@ -11,8 +11,9 @@ def test_root_route_returns_200():
     assert response.status_code == 200
 
 
-def test_error_route_returns_custom_500():
+def test_internal_server_error_handler():
     client = app.app.test_client()
-    response = client.get('/error')
+    response = client.get('/cause_error')
     assert response.status_code == 500
-    assert response.get_json() == {'error': 'Internal Server Error'}
+    assert response.get_json() == {"error": "Internal Server Error"}
+
