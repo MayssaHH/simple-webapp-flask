@@ -42,3 +42,12 @@ http://<IP>:5000                            => Welcome
 http://<IP>:5000/how%20are%20you            => I am good, how about you?
 http://<IP>:5000/health                  => {"status": "OK"}
 ```
+
+## Docker
+
+Build the container image and run it:
+
+```bash
+docker build -t simple-webapp .
+docker run -p 8080:8080 simple-webapp
+```
