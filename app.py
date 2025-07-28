@@ -14,6 +14,7 @@ def hello():
 def health():
     return jsonify(status='OK'), 200
 
+
 # route to deliberately raise an exception for testing
 @app.route('/cause_error')
 def cause_error():
